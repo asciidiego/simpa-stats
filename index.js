@@ -7,6 +7,8 @@ const obtener = https.get;
 
 app.use(express.static('public'))
 
+// TODO: Meter cache para no estar molestando a
+// faceitanalyser tanto...
 app.get('/', (req, res) => {
     obtener('https://faceitanalyser.com/stats/riicky96', (respuestaDeLaWeb) => {
 respuestaDeLaWeb.setEncoding('utf8');
