@@ -1,0 +1,539 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  
+  <title>Faceit Analyser | Stats</title>
+  
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({
+        'gtm.start': new Date().getTime(),
+        event: 'gtm.js'
+      });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-TPC5CMC');
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <link rel="shortcut icon" type="image/png" href="/static/stats/i/favicon.png" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/0.5.7/chartjs-plugin-annotation.js">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@0.7.7"></script>
+  <link rel="stylesheet" href="/static/stats/main.css" />
+  <script type="text/javascript" src="/static/stats/script.js"></script>
+  <meta name="google-site-verification" content="hMPDwehQvCImR5xtmtVD9QNKQRZe5x68m56XLgrtHy4" />
+  <meta name="description"
+    content="Analyse your Faceit stats, check your match history, and review your best maps and hubs to become a better player! Relive your best moments">
+  <meta name="keywords"
+    content="counterstrike, faceitstats, faceit stats, cs, face it, faceit, csgo, faceit helper, faceitstats, elo faceit, faceit elo, faceit statistics, faceit ranks, faceit analiser, faceit analyser, faceit analyzer, faceit analizer, faceit help, faceitanaliser, faceitanalyser, faceitanalyzer, faceitanalizer">
+
+</head>
+
+<style>
+  .w3-sidebar {
+    width: 120px;
+    background: #222;
+  }
+
+  #main {
+    margin-left: 120px;
+    font-size: 1vw
+  }
+
+  @media only screen and (max-width: 600px) {
+    #main {
+      margin-left: 0;
+      margin-top: 20px
+    }
+  }
+</style>
+
+
+<body class="w3-black">
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TPC5CMC" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+
+  <!-- Icon Bar (Sidebar - hidden on small screens) -->
+  <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center"
+    style="background-color:rgba(0, 0, 0, 0.5);width: 7%;">
+    <!-- Avatar image in top left corner -->
+    <a href="\">
+      <img src="/static/stats/i/favicon.png" style="width:80%; margin:auto;margin-bottom:30px;margin-top:15px">
+    </a>
+
+    
+    <a id="stats" href="/stats/riicky96" class="w3-bar-item w3-button w3-hover-black">
+      <img style="width:2vw" src="/static/stats/i/stats.png" class="fa w3-xxlarge">
+      <p style="padding:8px 0px">Stats</p>
+    </a>
+
+    <a id="matches" href="/matches/riicky96" class="w3-bar-item w3-button w3-hover-black">
+      <img style="width:2vw" src="/static/stats/i/versus.png" class="fa w3-xxlarge">
+      <p style="padding:8px 0px">Matches</p>
+    </a>
+
+    <a id="hubs" href="/hubs/riicky96" class="w3-bar-item w3-button w3-hover-black">
+      <img style="width:2vw" src="/static/stats/i/hub.png" class="fa w3-xxlarge">
+      <p style="padding:8px 0px">Hubs</p>
+    </a>
+
+    <a id="maps" href="/maps/riicky96" class="w3-bar-item w3-button w3-hover-black">
+      <img style="width:2vw" src="/static/stats/i/maps.png" class="fa w3-xxlarge">
+      <p style="padding:8px 0px">Maps</p>
+    </a>
+
+    <a id="names" href="/names/riicky96" class="w3-bar-item w3-button w3-hover-black">
+      <img style="width:2vw" src="/static/stats/i/names.png" class="fa w3-xxlarge">
+      <p style="padding:8px 0px">Names</p>
+    </a>
+
+    <a id="highlights" href="/highlights/riicky96" class="w3-bar-item w3-button w3-hover-black">
+      <img style="width:2vw" src="/static/stats/i/highlights.png" class="fa w3-xxlarge">
+      <p style="padding:8px 0px">Highlights</p>
+    </a>
+
+    <a id="teammates" href="/teammates/riicky96" class="w3-bar-item w3-button w3-hover-black">
+      <img style="width:2vw" src="/static/stats/i/teammates.png" class="fa w3-xxlarge">
+      <p style="padding:8px 0px">Teammates</p>
+    </a>
+    
+
+  </nav>
+
+  <!-- Navbar on small screens (Hidden on medium and large screens) -->
+  <div class="w3-hide-large w3-hide-medium" id="myNavbar" style="background-color:rgba(0, 0, 0, 0.5)">
+    <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center " style="font-size: 9px;">
+      <a href="\" class="w3-bar-item w3-button" style="width:9% !important; padding: 8px 0px">Home</a>
+      
+      <a href="/stats/riicky96" class="w3-bar-item w3-button"
+        style="width:11% !important; padding: 8px 0px">Stats</a>
+      <a href="/matches/riicky96" class="w3-bar-item w3-button"
+        style="width:12% !important; padding: 8px 0px">Matches</a>
+      <a href="/hubs/riicky96" class="w3-bar-item w3-button"
+        style="width:11% !important; padding: 8px 0px">Hubs</a>
+      <a href="/maps/riicky96" class="w3-bar-item w3-button"
+        style="width:10% !important; padding: 8px 0px">Maps</a>
+      <a href="/names/riicky96" class="w3-bar-item w3-button"
+        style="width:12% !important; padding: 8px 0px">Names</a>
+      <a href="/highlights/riicky96" class="w3-bar-item w3-button"
+        style="width:16% !important; padding: 8px 0px">Highlights</a>
+      <a href="/teammates/riicky96" class="w3-bar-item w3-button"
+        style="width:16% !important; padding: 8px 0px">Teammates</a>
+      
+    </div>
+  </div>
+
+
+  
+<div style="float:right; margin-right: 20px; margin-top:10px;color: chocolate;z-index: 1000;">
+
+    <div class="dropdownM" onclick="login_menu()">
+        <img src="/static/stats/i/menu.png" id="target" style="width: 70px;height: 70px;" alt="">
+
+        <div class="dropdown-content" id="login_menu" style="display: none;">
+            <a href="\">
+                <span>Faceit Analyser</span>
+            </a>
+            <a href="\matchanalyser">
+                <span>Match Analyser</span>
+            </a>
+            <a href="\mappicker">
+                <span>Map Picker</span>
+            </a>
+            <a href="\havewemet">
+                <span>Have We Met</span>
+            </a>
+        </div>
+        <script>
+            document.addEventListener("click", function (evt) {
+                hide_menu(evt)
+            }, false);
+        </script>
+    </div>
+
+</div>
+
+  <!-- Page Content, change width to 80% later -->
+  <div class="" style="margin-left:10%;width: 85%; display: flex;">
+    <div class="" style="margin-left:auto; margin-right:auto;width:100%">
+      <center>
+        <div class="w3-container w3-center" id="home" style="align-content:center;padding: 2vw 0vw;">
+    <form action="/player" style="line-height:4"
+        onsubmit="myBtn.disabled=true; setTimeout(function(){ myBtn.disabled=false },6000) ;return true;">
+        <input type="search" id="myInput" name="id" class="search_bar"
+            placeholder="STEAM ID / STEAM URL / FACEIT URL / FACEIT NAME" required
+            aria-label="Search through site content">
+
+        <button id="myBtn" class="search_button">
+            <i class="fa fa-paper-plane"></i> Search
+        </button>
+    </form>
+</div>
+        
+
+<div class="stats_profile_inner">
+
+    
+    <img class="stats_profile_avatar" src="https://assets.faceit-cdn.net/avatars/20a2f016-c6bf-46dc-881d-2f7591ad2c47_1550730488311.jpg">
+    
+    <div class="stats_profile_name_block">
+        <a style="float:right;" href="https://steamcommunity.com/profiles/76561198021458142" target="_blank">
+            <img src="/static/stats/i/steam.png" class="stats_profile_steam_icon">
+        </a>
+        <a style="float:right " href="https://www.faceit.com/en/players/riicky96" target="_blank">
+            <img src="/static/stats/i/faceit.png" class="stats_profile_faceit_icon">
+        </a>
+        <span class="stats_profile_name_span">
+            riicky96
+        </span>
+
+    </div>
+
+    <div id="lvl" class="stats_profile_elo_block">
+
+        <img class="stats_profile_level_image" src="/static/stats/i/lvl4.svg">
+        <span class="stats_profile_elo_span">1207 ELO</span>
+        
+    </div>
+
+</div>
+
+
+<div class="stats_container">
+    <div class="stats_totals_block_wrapper">
+        <div class="stats_totals_block_cover"></div>
+        <div class="stats_totals_block_title">
+            <span class="stats_totals_block_title_text">Avg. KDR</span>
+        </div>
+        <div class="stats_totals_block_main_value">
+            
+            <span class="stats_totals_block_main_value_span positive">1.11</span>
+            
+
+        </div>
+        <div class="stats_totals_block_item stats_totals_block_item_separated">
+            <div>
+                <span class="stats_totals_block_item_title">Avg. KPR</span>
+            </div>
+            <div>
+                <span class="stats_totals_block_item_value">0.72</span>
+            </div>
+        </div>
+        <div class="stats_totals_block_item stats_totals_block_item_separated">
+            <div>
+                <span class="stats_totals_block_item_title">Avg. Kills</span>
+            </div>
+            <div>
+                <span class="stats_totals_block_item_value">17.45</span>
+            </div>
+
+        </div>
+        <div class="stats_totals_block_item">
+            <div>
+                <span class="stats_totals_block_item_title">Avg. Deaths</span>
+            </div>
+            <div>
+                <span class="stats_totals_block_item_value">17.1</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="stats_totals_block_wrapper">
+        <div class="stats_totals_block_cover"></div>
+        <div class="stats_totals_block_title">
+            <span class="stats_totals_block_title_text">HLTV</span>
+        </div>
+        <div class="stats_totals_block_main_value">
+            
+            <span class="stats_totals_block_main_value_span positive">1.04</span>
+            
+        </div>
+        <div class="stats_totals_block_item stats_totals_block_item_separated">
+            <div>
+                <span class="stats_totals_block_item_title">Real KDR</span>
+            </div>
+            <div>
+                <span class="stats_totals_block_item_value">1.02</span>
+            </div>
+        </div>
+        <div class="stats_totals_block_item stats_totals_block_item_separated">
+            <div>
+                <span class="stats_totals_block_item_title">Kills</span>
+            </div>
+            <div>
+                <span class="stats_totals_block_item_value">349</span>
+            </div>
+        </div>
+        <div class="stats_totals_block_item">
+            <div>
+                <span class="stats_totals_block_item_title">Deaths</span>
+            </div>
+            <div>
+                <span class="stats_totals_block_item_value">342</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="stats_totals_block_wrapper">
+        <div class="stats_totals_block_cover"></div>
+        <div class="stats_totals_block_title">
+            <span class="stats_totals_block_title_text">Winrate</span>
+        </div>
+        <div class="stats_totals_block_main_value">
+
+            
+            <span class="stats_totals_block_main_value_span positive">55.0</span>
+            
+
+        </div>
+        <div class="stats_totals_block_item stats_totals_block_item_separated">
+            <div>
+                <span class="stats_totals_block_item_title">Matches</span>
+            </div>
+            <div>
+                <span class="stats_totals_block_item_value">20</span>
+            </div>
+        </div>
+        <div class="stats_totals_block_item stats_totals_block_item_separated">
+            <div>
+                <span class="stats_totals_block_item_title">Wins</span>
+            </div>
+            <div>
+                <span class="stats_totals_block_item_value">11</span>
+            </div>
+        </div>
+        <div class="stats_totals_block_item">
+            <div>
+                <span class="stats_totals_block_item_title">Losses</span>
+            </div>
+            <div>
+                <span class="stats_totals_block_item_value">9</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="stats_totals_block_wrapper">
+        <div class="stats_totals_block_cover"></div>
+        <div class="stats_totals_block_title">
+            <span class="stats_totals_block_title_text">ELO</span>
+        </div>
+        <div class="stats_totals_block_main_value">
+
+
+            <span class="stats_totals_block_main_value_span positive">1207</span>
+
+        </div>
+        <div class="stats_totals_block_item stats_totals_block_item_separated">
+            <div>
+                <span class="stats_totals_block_item_title">Highest ELO</span>
+            </div>
+            <div>
+                <span class="stats_totals_block_item_value">1235</span>
+            </div>
+        </div>
+        <div class="stats_totals_block_item stats_totals_block_item_separated">
+            <div>
+                <span class="stats_totals_block_item_title">Lowest ELO</span>
+            </div>
+            <div>
+                <span class="stats_totals_block_item_value">1057</span>
+            </div>
+        </div>
+        <div class="stats_totals_block_item">
+            <div>
+                <span class="stats_totals_block_item_title">Avg. ELO</span>
+            </div>
+            <div>
+                <span class="stats_totals_block_item_value">1168</span>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<div class="stats_container;"
+    style="background-color: rgba(0, 0, 0, 0.45);padding: 20px;margin: 20px;width: 75%;font-size: 10px;border-radius: 5px;">
+
+    
+    <h3 style="margin-top: 0px;">riicky96 is better than <span style="color:chocolate;display: inline-block;"
+            class="tooltipO">88.24%
+            <span class="tooltiptext" style="width: max-content;color:white;font-size:16px">
+                Rank
+                <span style="color:chocolate;font-weight: bold;">913,374</span> out of
+                <span style="color:chocolate;font-weight: bold;">7,764,493</span>
+            </span>
+        </span> of the EU players</h3>
+    
+
+    <div style="display: flex;">
+        <div style="width: 92%;">
+            <div style="height: 5px; background: rgb(50, 55, 55);text-align: center;">
+                <div id="bar" style="width:0%;height: 100%;background: chocolate"></div>
+            </div>
+            <div style="display: flex;">
+                <div
+                    style="width: 40%; border-right: 1px solid rgb(75, 78, 78); text-align: center; padding: 10px 0px;">
+                    <span id="lvl1_svg" title="Skill Level 1" style="width: 32px; display: inline-block; opacity: 0.5;">
+                        <img src="/static/stats/i/lvl1.svg" style="height: 32px;width: 32px;">
+                    </span>
+                    <div id="lvl1_txt" style="margin-top: 2px; opacity: 0.5;">1 – 800</div>
+                </div>
+                <div class="text-light"
+                    style="width: 7.5%; border-right: 1px solid rgb(75, 78, 78); text-align: center; padding: 10px 0px;">
+                    <span id="lvl2_svg" title="Skill Level 2" style="width: 32px; display: inline-block; opacity: 0.5;">
+                        <img src="/static/stats/i/lvl2.svg" style="height: 32px;width: 32px;">
+                    </span>
+                    <div id="lvl2_txt" style="margin-top: 2px; opacity: 0.5;">801 – 950</div>
+                </div>
+                <div
+                    style="width: 7.5%; border-right: 1px solid rgb(75, 78, 78); text-align: center; padding: 10px 0px;">
+                    <span id="lvl3_svg" title="Skill Level 3" style="width: 32px; display: inline-block; opacity: 0.5;">
+                        <img src="/static/stats/i/lvl3.svg" style="height: 32px;width: 32px;">
+                    </span>
+                    <div id="lvl3_txt" style="margin-top: 2px; opacity: 0.5;">951 – 1100</div>
+                </div>
+                <div
+                    style="width: 7.5%; border-right: 1px solid rgb(75, 78, 78); text-align: center; padding: 10px 0px;">
+                    <span id="lvl4_svg" title="Skill Level 4" style="width: 32px; display: inline-block; opacity: 0.5;">
+                        <img src="/static/stats/i/lvl4.svg" style="height: 32px;width: 32px;">
+                    </span>
+                    <div id="lvl4_txt" style="margin-top: 2px; opacity: 0.5;">1101 – 1250</div>
+                </div>
+                <div
+                    style="width: 7.5%; border-right: 1px solid rgb(75, 78, 78); text-align: center; padding: 10px 0px;">
+                    <span id="lvl5_svg" title="Skill Level 5" style="width: 32px; display: inline-block; opacity: 0.5;">
+                        <img src="/static/stats/i/lvl5.svg" style="height: 32px;width: 32px;">
+                    </span>
+                    <div id="lvl5_txt" style="margin-top: 2px; opacity: 0.5;">1251 – 1400</div>
+                </div>
+                <div
+                    style="width: 7.5%; border-right: 1px solid rgb(75, 78, 78); text-align: center; padding: 10px 0px;">
+                    <span id="lvl6_svg" title="Skill Level 6" style="width: 32px; display: inline-block; opacity: 0.5;">
+                        <img src="/static/stats/i/lvl6.svg" style="height: 32px;width: 32px;">
+                    </span>
+                    <div id="lvl6_txt" style="margin-top: 2px; opacity: 0.5;">1401 – 1550</div>
+                </div>
+                <div
+                    style="width: 7.5%; border-right: 1px solid rgb(75, 78, 78); text-align: center; padding: 10px 0px;">
+                    <span id="lvl7_svg" title="Skill Level 7" style="width: 32px; display: inline-block; opacity: 0.5;">
+                        <img src="/static/stats/i/lvl7.svg" style="height: 32px;width: 32px;">
+                    </span>
+                    <div id="lvl7_txt" style="margin-top: 2px; opacity: 0.5;">1551 – 1700</div>
+                </div>
+                <div
+                    style="width: 7.5%; border-right: 1px solid rgb(75, 78, 78); text-align: center; padding: 10px 0px;">
+                    <span id="lvl8_svg" title="Skill Level 8" style="width: 32px; display: inline-block; opacity: 0.5;">
+                        <img src="/static/stats/i/lvl8.svg" style="height: 32px;width: 32px;">
+                    </span>
+                    <div id="lvl8_txt" style="margin-top: 2px; opacity: 0.5;">1701 – 1850</div>
+                </div>
+                <div
+                    style="width: 7.5%; border-right: 1px solid rgb(75, 78, 78); text-align: center; padding: 10px 0px;">
+                    <span id="lvl9_svg" title="Skill Level 9" style="width: 32px; display: inline-block; opacity: 0.5;">
+                        <img src="/static/stats/i/lvl9.svg" style="height: 32px;width: 32px;">
+                    </span>
+                    <div id="lvl9_txt" style="margin-top: 2px; opacity: 0.5;">1851 – 2000</div>
+                </div>
+            </div>
+        </div>
+        <div style="width: 8%;">
+            <div id="bar10" style="width: 100%; height: 5px; background: rgb(50, 55, 55);"></div>
+            <div style="width: 100%; text-align: center; padding: 10px 0px;">
+                <span id="lvl10_svg" title="Skill Level 10" style="width: 32px; display: inline-block; opacity: 0.5;">
+                    <img src="/static/stats/i/lvl10.svg" style="height: 32px;width: 32px;">
+                </span>
+                <div id="lvl10_txt" style="margin-top: 2px; opacity: 0.5;">2001+</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div style="width: 75%;margin: 0 auto;">
+
+    <canvas id="myELOChart" class="chart_background" width="250" height="60"></canvas>
+    <canvas id="myKDRChart" class="chart_background" width="250" height="60"></canvas>
+
+</div>
+
+<script>
+    let player_id = '20a2f016-c6bf-46dc-881d-2f7591ad2c47';
+    let player_lvl = '4';
+    let player_elo = parseInt('1207');
+    let progress_bar = player_elo / 2000 * 100
+
+    document.getElementById(`lvl${player_lvl}_svg`).style.opacity = 1
+    document.getElementById(`lvl${player_lvl}_txt`).style.opacity = 1
+
+    if (player_elo > 2000) {
+        document.getElementById(`bar`).style.width = `100%`
+        document.getElementById(`bar10`).style.background = 'chocolate'
+    } else {
+        document.getElementById(`bar`).style.width = `${progress_bar}%`
+    }
+    getKDRHistoryGraph(player_id);
+    getEloHistoryGraph(player_id);
+    //setColor();
+</script>
+
+      </center>
+    </div>
+  </div>
+
+
+  <!-- End Page Content -->
+
+</body>
+
+
+
+<footer style="position: fixed;right: 0;bottom: 5px;width: 25%;color: white;text-align: right;">
+    <a href="mailto:faceitanalyser@gmail.com">
+        <img src="/static/stats/i/circle_gmail.png" style="width: 2vw; margin-right: .4vw;">
+    </a>
+    <a href="https://discordapp.com/users/298068701721395200" target="_blank">
+        <img src="/static/stats/i/circle_discord.png" style="width: 2vw; margin-right: .4vw;">
+    </a>
+    <a href="https://twitter.com/faceitanalyser" target="_blank">
+        <img src="/static/stats/i/circle_twitter.png" style="width: 2vw; margin-right: .4vw;">
+    </a>
+    <a href="http://paypal.me/filipem96" target="_blank">
+        <img src="/static/stats/i/circle_paypal.png" style="width: 2vw; margin-right: .4vw;">
+    </a>
+    <a href="https://steamcommunity.com/tradeoffer/new/?partner=82668664&token=pDcxf_VP" target="_blank">
+        <img src="/static/stats/i/circle_steam.png" style="width: 2vw; margin-right: .4vw;">
+    </a>
+</footer>
+
+<script>
+  setActive();
+</script>
+
+</html>
